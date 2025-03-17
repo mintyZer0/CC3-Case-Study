@@ -9,12 +9,9 @@ def date_time():
 def transaction_id():
     characters = 'abcdefghijklmnopqrstuvwxyz'
     length = 8
-    
     transaction_id = ''
-    
     for i in range(length):
         transaction_id += random.choice(characters.upper())
-        
     return transaction_id
 
 def separator():
