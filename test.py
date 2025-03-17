@@ -54,7 +54,7 @@ def main():
                 print(f"Error: {ve}")
                 
         while True:
-                    buy_again = input("Would you like to add something ('y' or 'n')? ")
+                    buy_again = input("\nWould you like to add something ('y' or 'n')? ")
                     try:
                         if buy_again.lower() == 'y':
                             print()
