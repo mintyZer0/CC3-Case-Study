@@ -4,7 +4,6 @@ from datetime import datetime
 def date_time():
     now = datetime.now()
     formatted_datetime = now.strftime("%Y-%m-%d %H:%M:%S")
-
     return formatted_datetime
 
 def transaction_id():
@@ -24,6 +23,7 @@ def welcome_page():
     print("+" + "-"*50 + "+")
     print(f"Transaction ID: {transaction_id()}")
     print(f"Date & Time: {date_time()}\n")
+    print("+" + "-"*50 + "+")
 
 def purchase_type():
     
@@ -52,9 +52,9 @@ def main():
                 choice = purchase_type()
                 
                 if choice.lower() == 'bulk':
-                    print(f"Item {i}: ")
+                    pass
                 elif choice.lower() == 'retail':
-                    print(f"Item {i}: ")
+                    pass
                 else:
                     raise ValueError("Invalid purchase type")
 
