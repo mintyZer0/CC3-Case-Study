@@ -24,8 +24,8 @@ def welcome_page():
     separator()
     print("         Welcome to AE Merchandise Store")
     separator()
-    print(f"Transaction ID: {transaction_id()}")
-    print(f"Date & Time: {date_time()}\n")
+    print(f"Transaction ID: {transaction_id():>35}")
+    print(f"Date & Time: {date_time():>38}\n")
     separator()
 
 def purchase_type():
