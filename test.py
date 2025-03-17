@@ -64,7 +64,7 @@ def main():
                             break
                         elif buy_again.lower() == 'n':
                             separator()
-                            print(f"{"Thank you for your purchase. Goodbye!":^50}")
+                            print(f"{"Thank you for your purchase. Goodbye!":^50}") #center justify
                             separator()
                             is_running = False
                             break                        
