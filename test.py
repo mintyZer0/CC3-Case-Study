@@ -17,13 +17,16 @@ def transaction_id():
         
     return transaction_id
 
+def separator():
+    print("+" + "-"*50 + "+")
+    
 def welcome_page():
-    print("+" + "-"*50 + "+")
+    separator()
     print("         Welcome to AE Merchandise Store")
-    print("+" + "-"*50 + "+")
+    separator()
     print(f"Transaction ID: {transaction_id()}")
     print(f"Date & Time: {date_time()}\n")
-    print("+" + "-"*50 + "+")
+    separator()
 
 def purchase_type():
     
