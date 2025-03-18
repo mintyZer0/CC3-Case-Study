@@ -29,9 +29,10 @@ def purchase_type():
     choice = input("Enter purchase type ('bulk' or 'retail'): ")
     return choice
 
-def number_of_items():
-    n = int(input("Enter number of items: "))
-    return n
+def get_items():
+    separator()
+    item = input("Enter item: ")
+    return item
 
 def print_items():
     items_dict = {}
@@ -43,12 +44,13 @@ def print_items():
                     continue
                 items_dict[parts[0]] = int(parts[1])
         #print choices
-        separator()
+        # separator()
         print(f"{"Items":^25}|{"Price":^25}")
         separator()
         for key, value in items_dict.items():
             print(f"{key:<25}|{value:>25}")
         return items_dict
+    
     except Exception as e:
         print(e)
 
@@ -56,24 +58,32 @@ def print_items():
 def main():
     is_running = True
     welcome_page()
+    print_items()
+    
+    separator()
+    print("Enter 'q' to proceed checkout.")
     
     while is_running:
-        n = number_of_items()
-        
-        for i in range(1, (n + 1)):
+        while True:
+            item = get_items()
             
-            try:
-                choice = purchase_type()
-                if choice.lower() == 'bulk':
-                    print_items()
+            if item.lower() == 'q':
+                choice = input("Proceed to checkout ('y' or 'n')? ")
+                if choice == 'y':
+                    break
+                elif choice == 'n':
                     pass
-                elif choice.lower() == 'retail':
-                    print_items()
-                    pass
-                else:
-                    raise ValueError("Invalid purchase type")
-            except ValueError as ve:
-                print(f"Error: {ve}")
+            else:
+                try:
+                    choice = purchase_type()
+                    if choice.lower() == 'bulk':
+                        pass
+                    elif choice.lower() == 'retail':
+                        pass
+                    else:
+                        raise ValueError("Invalid purchase type")
+                except ValueError as ve:
+                    print(f"Error: {ve}")
                 
         while True:
                     buy_again = input("\nWould you like to add something ('y' or 'n')? ")
