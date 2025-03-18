@@ -48,7 +48,7 @@ def print_items():
         print(f"{"Items":^25}|{"Price":^25}")
         separator()
         for key, value in items_dict.items():
-            print(f"{key:<25}|{value:>25}")
+            print(f"{key:<25}|              P{value:>10,.2f}")
         return items_dict
     
     except Exception as e:
