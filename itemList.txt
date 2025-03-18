@@ -1,0 +1,34 @@
+#Apparel
+  Regatta Nautical-Inspired T-Shirt, 900.00
+  Jag Jeans Classic Denim Pants, 1000.00
+  Memo Casual Shorts, 500.00
+  Artwork Graphic Socks, 150.00
+  Regatta Hooded Sweatshirt, 1100.00
+
+#Kitchenware
+  KitchenCraft BarCraft 3-Piece Cocktail Set, 2450.00
+  KitchenCraft World Of Flavors Oriental Iron Sizzle Platter, 1850.00
+  KitchenCraft La Cafetiere 3 Cup Thermique - Copper Cafetiere, 3450.00
+  KitchenCraft BarCraft Deluxe Electric Corkscrew - Black, 2450.00
+  KitchenCraft BarCraft Stainless Steel Ice Bucket, 3450.00
+
+#Peripherals
+  Logitech Wireless Mouse, 1500.00
+  Acer 24-inch LED Monitor, 6000.00
+  Razer BlackWidow Mechanical Keyboard, 2500.00
+  Sony WH-CH510 Wireless Headphones, 2000.00
+  Anko 10,000mAh Power Bank, 1300.00
+
+#Tools
+  Stanley Fiberglass Hammer, 70.00
+  Bosch 2-inch Nails - 100 pcs, 50.00
+  Stanley Multi-bit Screwdriver, 65.00
+  Energizer LED Flashlight, 120.00
+  3M Scotch Electrical Tape, 45.00
+
+#Toys
+  Anko Plush Teddy Bear, 420.00
+  Hot Wheels Die-Cast Toy Car, 149.00
+  Nerf N-Strike Elite Disruptor Blaster, 249.00
+  Ravensburger Jigsaw Puzzle - 500 pcs, 289.00
+  Barbie Fashionista Doll, 790.00
