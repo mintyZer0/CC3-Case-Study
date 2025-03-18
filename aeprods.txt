@@ -1,0 +1,58 @@
+============================================================
+                    AE GENERAL MERCHANDISE                    
+============================================================
+
+Chips
+------------------------------------------------------------------
+| Item                                         | Weight | Price  |
+------------------------------------------------------------------
+| Jack 'n Jill Piattos Cheese Flavor           |  85g   | ₱20.00 |
+| Oishi Prawn Crackers                         |  60g   | ₱18.00 |
+| Honey Butter Potato Chips                    |  60g   | ₱47.50 |
+| Pringles Sour Cream and Onion                | 110g   | ₱92.50 |
+| Nova Multigrain Snacks                       |  78g   | ₱25.00 |
+------------------------------------------------------------------
+
+Drinks
+------------------------------------------------------------------
+| Item                                         | Volume | Price  |
+------------------------------------------------------------------
+| Mogu Mogu Strawberry Juice                   | 320ml  | ₱45.00 |
+| Vitamilk Soya Drink Double Choco             | 250ml  | ₱32.50 |
+| Kopiko Lucky Day                             | 180ml  | ₱23.50 |
+| Coca Cola Coke                               | 330ml  | ₱34.95 |
+| Le Minerale                                  | 600ml  | ₱11.60 |
+------------------------------------------------------------------
+
+Shampoos
+------------------------------------------------------------------
+| Item                                         | Volume | Price  |
+------------------------------------------------------------------
+| Sunsilk Smooth & Manageable Shampoo          | 340ml  | ₱100.00|
+| Pantene Pro-V Total Damage Care Shampoo      | 320ml  | ₱110.00|
+| Head & Shoulders Cool Menthol Shampoo        | 330ml  | ₱120.00|
+| Cream Silk Standout Straight Conditioner     | 180ml  | ₱105.00|
+| Palmolive Naturals Silky Straight Shampoo    | 350ml  | ₱95.00 |
+------------------------------------------------------------------
+
+Soaps
+------------------------------------------------------------------
+| Item                                         | Weight | Price  |
+------------------------------------------------------------------
+| Safeguard Pure White Bar Soap                | 135g   | ₱35.00 |
+| Dove White Beauty Bar                        | 135g   | ₱50.00 |
+| Lifebuoy Total 10 Antibacterial Soap         | 125g   | ₱32.00 |
+| Lux Soft Touch Bar Soap                      | 120g   | ₱40.00 |
+| Palmolive Naturals White with Papaya Soap    | 130g   | ₱38.00 |
+------------------------------------------------------------------
+
+School & Office Supplies
+------------------------------------------------------------------
+| Item                                         | Size   | Price  |
+------------------------------------------------------------------
+| Mongol Pencil No.2                           | 1 pc   | ₱9.92  |
+| Panda Ballpen 0.7mm Blue                     | 1 pc   | ₱12.00 |
+| Corona Spiral Notebook 80 Leaves             | 1 pc   | ₱45.00 |
+| Victory Yellow Pad 90 leaves                 | 1 pc   | ₱91.00 |
+| Elmer's Washable School Glue Gel             | 36g    | ₱22.00 |
+------------------------------------------------------------------
