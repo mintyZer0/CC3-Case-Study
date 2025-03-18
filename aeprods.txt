@@ -1,35 +1,35 @@
+#Snacks
+Jack 'n Jill Piattos Cheese Flavor 85g, 20.00
+Oishi Prawn Crackers 60g, 18.00
+Honey Butter Potato Chips 60g, 47.50
+Pringles Sour Cream and Onion 110g, 92.50
+Nova Multigrain Snacks 78g, 25.00
 
-#(Snacks)
-(Jack 'n Jill Piattos Cheese Flavor 85g), (₱20.00)
-(Oishi Prawn Crackers 60g), (₱18.00)
-(Honey Butter Potato Chips 60g), (₱47.50) 
-(Pringles Sour Cream and Onion 110g), (₱92.50)
-(Nova Multigrain Snacks 78g), (₱25.00)
+#Beverage
+Mogu Mogu Strawberry Juice 320ml, 45.00
+Vitamilk Soya Drink Double Choco 250ml, 32.50
+Kopiko Lucky Day 180ml, 23.50
+Coca Cola Coke 330ml, 34.95
+Le Minerale 600ml, 11.60
 
-#(Beverage)
-(Mogu Mogu Strawberry Juice 320ml), (₱45.00)
-(Vitamilk Soya Drink Double Choco 250ml), (₱32.50)
-(Kopiko Lucky Day 180ml), (₱23.50)
-(Coca Cola Coke 330ml), (₱34.95)
-(Le Minerale 600ml), (₱11.60)
+#Hair Care
+Head & Shoulders Cool Menthol 170ml, 179.75
+Sunsilk Strong and Long 320ml, 141.75
+Dove Ceramide Intense Repair Shampoo 170ml, 200.00
+Pantene Hair Fall Control 150ml, 188.00
+Palmolive Naturals Intensive Moisture 180ml, 144.00
 
-#(Hair Care)
-(Head & Shoulders Cool Menthol 170ml), (₱179.75)
-(Sunsilk Strong and Long 320ml), (₱141.75)
-(Dove Ceramide Intense Repair Shampoo 170ml), (₱200.00)
-(Pantene Hair Fall Control 150ml, (₱188.00)
-(Palmolive Naturals Intensive Moisture 180ml), (₱144.00)
+#Body Care
+Safeguard Pure White Jumbo 175g, 69.75
+Dove White Beauty Bar 90g, 75.00
+Dr. S. Wong's Sulfur Soap with Aloe Vera 135g, 61.75
+Bioderm Soap Coolness 135g, 48.75
+Palmolive Pinkish Glow 115g, 41.74
 
-#(Body Care)
-(Safeguard Pure White Jumbo 175g), (₱69.75)
-(Dove White Beauty Bar 90g), (₱75.00)
-(Dr. S. Wong's Sulfur Soap with Aloe Vera 135g), (₱61.75)
-(Bioderm Soap Coolness 135g), (₱48.75)
-(Palmolive Pinkish Glow 115g), (₱41.74)
+#School & Office Supplies
+Mongol Pencil No.2 1 pc, 9.92
+Panda Ballpen 0.7mm Blue 1 pc, 12.00
+Corona Spiral Notebook 80 Leaves 1 pc, 45.00
+Victory Yellow Pad 90 leaves 1 pc, 91.00
+Elmer's Washable School Glue Gel 36g, 22.00
 
-#(School & Office Supplies)
-(Mongol Pencil No.2 1 pc), (₱9.92)
-(Panda Ballpen 0.7mm Blue 1 pc), (₱12.00)
-(Corona Spiral Notebook 80 Leaves 1 pc), (₱45.00)
-(Victory Yellow Pad 90 leaves 1 pc), (₱91.00)
-(Elmer's Washable School Glue Gel 36g), (₱22.00)
