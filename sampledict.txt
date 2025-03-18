@@ -1,0 +1,21 @@
+#item,price
+broom,30
+water bottle,20
+notebook,50
+pen,10
+eraser,5
+backpack,300
+umbrella,150
+laptop,50000
+phone charger,800
+headphones,1500
+keyboard,1200
+mouse,700
+desk lamp,900
+chair,3500
+table,5000
+monitor,10000
+printer,8000
+fan,2000
+power bank,2500
+flash drive,600
