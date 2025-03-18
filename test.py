@@ -32,6 +32,26 @@ def purchase_type():
 def number_of_items():
     n = int(input("Enter number of items: "))
     return n
+
+def print_items():
+    items_dict = {}
+    try:  
+        with open ("sampledict.csv") as file:
+            for line in file:
+                parts = [part.strip() for part in line.split(",")]
+                if parts[0][0] == "#":
+                    continue
+                items_dict[parts[0]] = int(parts[1])
+        #print choices
+        separator()
+        print(f"{"Items":^25}|{"Price":^25}")
+        separator()
+        for key, value in items_dict.items():
+            print(f"{key:<25}|{value:>25}")
+        return items_dict
+    except Exception as e:
+        print(e)
+
     
 def main():
     is_running = True
@@ -45,8 +65,10 @@ def main():
             try:
                 choice = purchase_type()
                 if choice.lower() == 'bulk':
+                    print_items()
                     pass
                 elif choice.lower() == 'retail':
+                    print_items()
                     pass
                 else:
                     raise ValueError("Invalid purchase type")
