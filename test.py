@@ -1,5 +1,9 @@
 import random
+from curses import wrapper
+from os import system
 from datetime import datetime
+
+inventory_dict = {}
 
 def date_time():
     now = datetime.now()
@@ -15,14 +19,14 @@ def transaction_id():
     return transaction_id
 
 def separator():
-    print("+" + "-"*50 + "+")
+    print("+" + "-"*100 + "+")
     
 def welcome_page():
     separator()
-    print(f"{"Welcome to AE Merchandise Store":^50}") #center justify
+    print(f"{"Welcome to AE Merchandise Store":^100}") #center justify
     separator()
-    print(f"Transaction ID: {transaction_id():>35}") #right justify
-    print(f"Date & Time: {date_time():>38}") #right justify
+    print(f"Transaction ID: {transaction_id():>85}") #right justify
+    print(f"Date & Time: {date_time():>88}") #right justify
     separator()
 
 def purchase_type():
@@ -34,52 +38,71 @@ def get_items():
     item = input("Enter item: ")
     return item
 
-def print_items():
-    items_dict = {}
-    try:  
-        with open ("sampledict.csv") as file:
-            for line in file:
-                parts = [part.strip() for part in line.split(",")]
-                if parts[0][0] == "#":
-                    continue
-                items_dict[parts[0]] = int(parts[1])
-        #print choices
-        # separator()
-        print(f"{"Items":^25}|{"Price":^25}")
-        separator()
-        for key, value in items_dict.items():
-            print(f"{key:<25}|              P{value:>10,.2f}")
-        return items_dict
+def print_items(category):
     
+    print(f"{"Items":^50}|{"Price":^50}")
+    separator()
+    for i, (key, value) in enumerate(inventory_dict[category].items()):
+        value = "₱" + str(value)
+        print(f"({i}) {key:<46}|{value:>50}")
+    
+def print_menu(): 
+    separator()
+    print(f"{"Menu":^100}")
+    separator()
+    for i, (key, value) in enumerate(inventory_dict.items()):
+        print(f"({i+1}) {key}")
+
+def get_menu_input() -> str:
+    user_input = input(f"Select a category by inputting the number ('q' to checkout): ")
+    for i, (key) in enumerate(inventory_dict):
+        if not user_input.isalpha() and int(user_input) == i :
+            return key
+    return user_input
+
+                   
+    
+def process_items():
+    try:
+        with open ("products.csv") as file:
+            for line in file:
+                if line.strip():
+                    parts = [part.strip() for part in line.split(",")]
+                    if parts[0][0] == "#":
+                        category = parts[0].replace("#", "")
+                        inventory_dict[category] = {}
+                        continue
+                    inventory_dict[category][parts[0]] = float(parts[1])
     except Exception as e:
         print(e)
 
     
 def main():
     is_running = True
+    process_items()
     welcome_page()
-    print_items()
     
-    separator()
-    print("Enter 'q' to proceed checkout.")
     
     while is_running:
         while True:
-            item = get_items()
+            print_menu()
+            menu_input = get_menu_input()
             
-            if item.lower() == 'q':
+            
+            if menu_input.isalpha() and menu_input.lower() == 'q':
                 choice = input("Proceed to checkout ('y' or 'n')? ")
                 if choice == 'y':
                     break
                 elif choice == 'n':
-                    pass
+                    continue
             else:
                 try:
                     choice = purchase_type()
                     if choice.lower() == 'bulk':
-                        pass
+                        print_items(menu_input)
                     elif choice.lower() == 'retail':
-                        pass
+                        print_items(menu_input)
+                        
                     else:
                         raise ValueError("Invalid purchase type")
                 except ValueError as ve:
@@ -103,3 +126,5 @@ def main():
                         print(f"Error: {ve}")
 
 main()
+# process_items()
+# get_menu_input()
