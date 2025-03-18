@@ -22,7 +22,7 @@ def welcome_page():
     print(f"{"Welcome to AE Merchandise Store":^50}") #center justify
     separator()
     print(f"Transaction ID: {transaction_id():>35}") #right justify
-    print(f"Date & Time: {date_time():>38}\n") #right justify
+    print(f"Date & Time: {date_time():>38}") #right justify
     separator()
 
 def purchase_type():
