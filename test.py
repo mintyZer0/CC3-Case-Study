@@ -39,7 +39,7 @@ def get_items():
     return item
 
 def print_items(category):
-    
+    #Prints items listed inside category
     print(f"{"Items":^50}|{"Price":^50}")
     separator()
     for i, (key, value) in enumerate(inventory_dict[category].items()):
