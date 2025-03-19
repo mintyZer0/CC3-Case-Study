@@ -33,10 +33,13 @@ def purchase_type():
     choice = input("Enter purchase type ('bulk' or 'retail'): ")
     return choice
 
-def get_items():
+def get_item_input(category):
     separator()
-    item = input("Enter item: ")
-    return item
+    item = input("Select the item you want: ")
+    quantity = input("Input quantity: ")
+    for i, (key, value) in enumerate(inventory_dict[category].items()):
+        if int(item) == i + 1:
+            return key, int(quantity), int(quantity) * int(value)
 
 def print_items(category):
     #Prints items listed inside category
@@ -44,7 +47,7 @@ def print_items(category):
     separator()
     for i, (key, value) in enumerate(inventory_dict[category].items()):
         value = "₱" + str(value)
-        print(f"({i}) {key:<46}|{value:>50}")
+        print(f"({i+1}) {key:<46}|{value:>50}")
     
 def print_menu(): 
     separator()
@@ -98,10 +101,13 @@ def main():
             else:
                 try:
                     choice = purchase_type()
+                    category = menu_input
                     if choice.lower() == 'bulk':
                         print_items(menu_input)
+                        print(get_item_input(category))
                     elif choice.lower() == 'retail':
                         print_items(menu_input)
+                        get_item_input(category)
                         
                     else:
                         raise ValueError("Invalid purchase type")
@@ -116,7 +122,7 @@ def main():
                             break
                         elif buy_again.lower() == 'n':
                             separator()
-                            print(f"{"Thank you for your purchase. Goodbye!":^50}") #center justify
+                            print(f"{"Thank you for your purchase. Goodbye!":^100}") #center justify
                             separator()
                             is_running = False
                             break                        
