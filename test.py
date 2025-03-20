@@ -78,21 +78,37 @@ def process_items():
     except Exception as e:
         print(e)
 
+purchased_items = []
+
+def apply_discount(total_cost, discount_rate=0.15):
+    return total_cost * (1 - discount_rate)
+
+def generate_receipt():
+    separator()
+    print(f"{"Receipt":^100}")
+    separator()
+    total_amount = 0
+    for item, quantity, cost in purchased_items:
+        print(f"{item:<50} x{quantity:<5} ₱{cost:>10}")
+        total_amount += cost
+    separator()
+    print(f"{'Total Amount:':<55} ₱{total_amount:>10}")
+    separator()
+
 def main():
     is_running = True
     process_items()
     welcome_page()
-    
     
     while is_running:
         while True:
             print_menu()
             menu_input = get_menu_input()
             
-            
             if menu_input.isalpha() and menu_input.lower() == 'q':
                 choice = input("Proceed to checkout ('y' or 'n')? ")
                 if choice == 'y':
+                    generate_receipt()
                     break
                 elif choice == 'n':
                     continue
@@ -102,32 +118,42 @@ def main():
                     category = menu_input
                     if choice.lower() == 'bulk':
                         print_items(menu_input)
-                        print(get_item_input(category))
+                        item, quantity, total_cost = get_item_input(category)
+                        if quantity < 20:
+                            print("Quantity is less than 20, no discount applied.")
+                            print(f"Total cost: ₱{total_cost}")
+                            purchased_items.append((item, quantity, total_cost))
+                        else:
+                            discounted_price = apply_discount(total_cost)
+                            print(f"Total cost: ₱{total_cost}")
+                            print(f"Discounted price: ₱{discounted_price}")
+                            purchased_items.append((item, quantity, discounted_price))
                     elif choice.lower() == 'retail':
                         print_items(menu_input)
-                        get_item_input(category)
-                        
+                        item, quantity, total_cost = get_item_input(category)
+                        print(f"Total cost: ₱{total_cost}")
+                        purchased_items.append((item, quantity, total_cost))
                     else:
                         raise ValueError("Invalid purchase type")
                 except ValueError as ve:
                     print(f"Error: {ve}")
                 
         while True:
-                    buy_again = input("\nWould you like to add something ('y' or 'n')? ")
-                    try:
-                        if buy_again.lower() == 'y':
-                            print()
-                            break
-                        elif buy_again.lower() == 'n':
-                            separator()
-                            print(f"{"Thank you for your purchase. Goodbye!":^100}") #center justify
-                            separator()
-                            is_running = False
-                            break                        
-                        else:
-                            raise ValueError("Invalid choice")
-                    except ValueError as ve:
-                        print(f"Error: {ve}")
+            buy_again = input("\nWould you like to add something ('y' or 'n')? ")
+            try:
+                if buy_again.lower() == 'y':
+                    print()
+                    break
+                elif buy_again.lower() == 'n':
+                    separator()
+                    print(f"{"Thank you for your purchase. Goodbye!":^100}") #center justify
+                    separator()
+                    is_running = False
+                    break                        
+                else:
+                    raise ValueError("Invalid choice")
+            except ValueError as ve:
+                print(f"Error: {ve}")
 
 main()
 # process_items()
