@@ -5,13 +5,16 @@ import sys
 from datetime import datetime
 
 inventory_dict = {}
+purchased_items = []
 
 def date_time():
+    #Returns current date time
     now = datetime.now()
     formatted_datetime = now.strftime("%Y-%m-%d %H:%M:%S")
     return formatted_datetime
 
 def transaction_id():
+    #Returns a randomly generated id
     characters = 'abcdefghijklmnopqrstuvwxyz'
     length = 8
     transaction_id = ''
@@ -23,6 +26,7 @@ def separator():
     print("+" + "-"*100 + "+")
 
 def welcome_page():
+    #Prints a welcome page with transaction id and current date
     separator()
     print(f"{"Welcome to AE Merchandise Store":^100}") #center justify
     separator()
@@ -31,10 +35,13 @@ def welcome_page():
     separator()
 
 def purchase_type():
+    #Returns either bulk or retail as the purchase type
     choice = input("Enter purchase type ('bulk' or 'retail'): ")
     return choice
 
 def get_item_input(category):
+    #Gets item input from user based on the arguments given
+    #and returns the item name, quantity of item and its total price
     separator()
     item = input("Select the item you want: ")
     quantity = input("Input quantity: ")
@@ -51,6 +58,7 @@ def print_items(category):
         print(f"({i+1}) {key:<46}|{value:>50}")
 
 def print_menu(): 
+    #Prints menu options
     separator()
     print(f"{"Menu":^100}")
     separator()
@@ -58,6 +66,7 @@ def print_menu():
         print(f"({i+1}) {key}")
 
 def get_menu_input() -> str:
+    #Get the input of the user or press q to quit
     user_input = input(f"Select a category by inputting the number ('q' to checkout): ")
     for i, (key) in enumerate(inventory_dict):
         if not user_input.isalpha() and int(user_input) == i :
@@ -65,6 +74,8 @@ def get_menu_input() -> str:
     return user_input
 
 def process_items():
+    #Process the items from a csv file and parse it into a nested dict where the outer dict is the category,
+    #and inside is a dict of items
     try:
         with open ("products.csv") as file:
             for line in file:
@@ -78,12 +89,12 @@ def process_items():
     except Exception as e:
         print(e)
 
-purchased_items = []
-
 def apply_discount(total_cost, discount_rate=0.15):
+    #Return a discounted version of the cost
     return total_cost * (1 - discount_rate)
 
 def generate_receipt():
+    #Generates the receipt which includes the item quantity, and cost of the item
     separator()
     print(f"{"Receipt":^100}")
     separator()
