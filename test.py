@@ -1,6 +1,7 @@
 import random
-from curses import wrapper
+import sys
 from os import system
+import sys
 from datetime import datetime
 
 inventory_dict = {}
@@ -20,7 +21,7 @@ def transaction_id():
 
 def separator():
     print("+" + "-"*100 + "+")
-    
+
 def welcome_page():
     separator()
     print(f"{"Welcome to AE Merchandise Store":^100}") #center justify
@@ -48,7 +49,7 @@ def print_items(category):
     for i, (key, value) in enumerate(inventory_dict[category].items()):
         value = "₱" + str(value)
         print(f"({i+1}) {key:<46}|{value:>50}")
-    
+
 def print_menu(): 
     separator()
     print(f"{"Menu":^100}")
@@ -63,8 +64,6 @@ def get_menu_input() -> str:
             return key
     return user_input
 
-                   
-    
 def process_items():
     try:
         with open ("products.csv") as file:
@@ -79,7 +78,6 @@ def process_items():
     except Exception as e:
         print(e)
 
-    
 def main():
     is_running = True
     process_items()
