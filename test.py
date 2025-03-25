@@ -36,8 +36,16 @@ def welcome_page():
 
 def purchase_type():
     #Returns either bulk or retail as the purchase type
-    choice = input("Enter purchase type ('bulk' or 'retail'): ")
-    return choice
+    #Returns either bulk or retail as the purchase type
+    #Input Validation
+    #try: 
+        #choice = input("Enter purchase type ('bulk' or 'retail'): ")
+        #if choice not in['bulk', 'retail']
+            #raise ValueError("Invalid Input: Please only enter 'bulk' or 'retail'")
+        #return choice
+    #except ValueError as ve:
+        #print(ve)
+        #return purchase_type()
 
 def get_item_input(category):
     #Gets item input from user based on the arguments given
