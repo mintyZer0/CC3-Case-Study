@@ -35,42 +35,41 @@ def welcome_page():
     separator()
 
 def purchase_type():
-    #Returns either bulk or retail as the purchase type
-    #Returns either bulk or retail as the purchase type
-    #Input Validation
-    #try: 
-        #choice = input("Enter purchase type ('bulk' or 'retail'): ")
-        #if choice not in['bulk', 'retail']
-            #raise ValueError("Invalid Input: Please only enter 'bulk' or 'retail'")
-        #return choice
-    #except ValueError as ve:
-        #print(ve)
-        #return purchase_type()
+    # Returns either bulk or retail as the purchase type
+    # Input Validation
+    try: 
+        choice = input("Enter purchase type ('bulk' or 'retail'): ")
+        if choice not in['bulk', 'retail']:
+            raise ValueError("Invalid Input: Please only enter 'bulk' or 'retail'")
+        return choice
+    except ValueError as ve:
+        print(ve)
+        return purchase_type()
 
 def get_item_input(category):
-    #Gets item input from user based on the arguments given
-    #and returns the item name, quantity of item and its total price
+    # Gets item input from user based on the arguments given
+    # and returns the item name, quantity of item and its total price
     separator()
-   # while True:  # input validation
-       # item = input("Select the item you want: ").strip()
-       # if not item.isdigit():
-        #    print("Invalid input. Please enter a valid item number.")
-         #   continue
-       # item = int(item)
+    while True:  # input validation
+       item = input("Select the item you want: ").strip()
+       if not item.isdigit():
+           print("Invalid input. Please enter a valid item number.")
+           continue
+       item = int(item)
         
-       # if item < 1 or item > len(inventory_dict[category]):
-        #    print("Invalid item selection. Please choose a valid item.")
-         #   continue
+       if item < 1 or item > len(inventory_dict[category]):
+           print("Invalid item selection. Please choose a valid item.")
+           continue
         
-       # quantity = input("Input quantity: ").strip()
-       # if not quantity.isdigit() or int(quantity) < 1:
-        #    print("Invalid quantity. Please enter a positive integer.")
-         #   continue
+       quantity = input("Input quantity: ").strip()
+       if not quantity.isdigit() or int(quantity) < 1:
+           print("Invalid quantity. Please enter a positive integer.")
+           continue
         
-     #   quantity = int(quantity)
-      #  for i, (key, value) in enumerate(inventory_dict[category].items()):
-       #     if item == i + 1:
-        #        return key, quantity, quantity * int(value)
+       quantity = int(quantity)
+       for i, (key, value) in enumerate(inventory_dict[category].items()):
+           if item == i + 1:
+               return key, quantity, quantity * int(value)
 
 def print_items(category):
     #Prints items listed inside category
@@ -89,18 +88,18 @@ def print_menu():
         print(f"({i+1}) {key}")
 
 def get_menu_input() -> str:
-    #Get the input of the user or press q to quit
-   #  while True:  
-    #    user_input = input(f"Select a category by inputting the number ('q' to checkout): ").strip()
-     #   if user_input.lower() == 'q':
-      #      return user_input
-       # if not user_input.isdigit() or int(user_input) < 1 or int(user_input) > len(inventory_dict):
-        #    print("Invalid input. Please enter a valid category number or 'q' to checkout.")
-       #     continue
+    # Get the input of the user or press q to quit
+    while True:  
+       user_input = input(f"Select a category by inputting the number ('q' to checkout): ").strip()
+       if user_input.lower() == 'q':
+           return user_input
+       if not user_input.isdigit() or int(user_input) < 1 or int(user_input) > len(inventory_dict):
+           print("Invalid input. Please enter a valid category number or 'q' to checkout.")
+           continue
         
-       # for i, key in enumerate(inventory_dict):
-        #    if int(user_input) == i + 1:
-         #       return key
+       for i, key in enumerate(inventory_dict):
+           if int(user_input) == i + 1:
+               return key
                 
 def process_items():
     #Process the items from a csv file and parse it into a nested dict where the outer dict is the category,
