@@ -1,5 +1,4 @@
 import random
-from os import system
 from datetime import datetime
  
 inventory_dict = {}
@@ -126,11 +125,13 @@ def generate_receipt():
     separator()
     total_amount = 0
     for item in purchased_items:
-        item_name, quantity, cost, *_ = item
-        print(f"{item_name:<50} x{quantity:<5} ₱{cost:>10}")
+        item_name, quantity, cost, *_ = item 
         total_amount += cost
+        cost = '₱' + str(f"{cost:.2f}")
+        print(f"{quantity:^10}{item_name:<50}{cost:>41}")
     separator()
-    print(f"{'Total Amount:':<60} ₱{total_amount:^40}")
+    total_amount = '₱' + str(f"{total_amount:.2f}") 
+    print(f"{'Total Amount:':<60} {total_amount:>40}")
     separator()
 
 def print_cart():
@@ -142,8 +143,8 @@ def print_cart():
     separator()
     for item in purchased_items:
         item_name = f"{item[0][0:max_length-4]}..." if len(item[0]) > max_length else item[0] 
-        price_per_unit = "₱" + str(item[3]) 
-        total_cost = "₱" + str(item[2])
+        price_per_unit = "₱" + str(f"{item[3]:.2f}") 
+        total_cost = "₱" + str(f"{item[2]:.2f}")
 
         print(f"{item[1]:^25}|{item_name:^25}|{price_per_unit:^25}|{total_cost:^25}")
 
@@ -153,7 +154,6 @@ def main():
     process_items()
     while is_running:
         while True:
-            #system('clear')
             welcome_page(transaction_id_instance)
             if purchased_items:
                 print_cart()
@@ -181,8 +181,8 @@ def main():
                             purchased_items.append((item, quantity, total_cost, price_per_unit, discounted))
                         else:
                             discounted_price = apply_discount(total_cost)
-                            print(f"Total cost: ₱{total_cost}")
-                            print(f"Discounted price: ₱{discounted_price}")
+                            print(f"Total cost: ₱{total_cost:.2f}")
+                            print(f"Discounted price: ₱{discounted_price:.2f}")
                             discounted = True
                             purchased_items.append((item, quantity, discounted_price, price_per_unit, discounted))
                     elif choice.lower() == 'retail':
