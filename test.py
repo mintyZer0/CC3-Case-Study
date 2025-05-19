@@ -66,7 +66,7 @@ def get_item_input(category):
        quantity = int(quantity)
        for i, (key, value) in enumerate(inventory_dict[category].items()):
            if item == i + 1:
-               return key, quantity, quantity * int(value), value
+               return key, quantity, quantity * value, value
 
 def print_items(category):
     #Prints items listed inside category
@@ -152,6 +152,7 @@ def main():
     is_running = True
     transaction_id_instance = transaction_id()
     process_items()
+    print(inventory_dict)
     while is_running:
         while True:
             welcome_page(transaction_id_instance)
