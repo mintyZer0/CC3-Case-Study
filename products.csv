@@ -1,69 +1,60 @@
-#Snacks
-Jack 'n Jill Piattos Cheese Flavor 85g, 20.00
-Oishi Prawn Crackers 60g, 18.00
-Honey Butter Potato Chips 60g, 47.50
-Pringles Sour Cream and Onion 110g, 92.50
-Nova Multigrain Snacks 78g, 25.00
+Product Name,Price,Category
+Jack 'n Jill Piattos Cheese Flavor 85g,20.00,Snacks
+Oishi Prawn Crackers 60g,18.00,Snacks
+Honey Butter Potato Chips 60g,47.50,Snacks
+Pringles Sour Cream and Onion 110g,92.50,Snacks
+Nova Multigrain Snacks 78g,25.00,Snacks
 
-#Beverage
-Mogu Mogu Strawberry Juice 320ml, 45.00
-Vitamilk Soya Drink Double Choco 250ml, 32.50
-Kopiko Lucky Day 180ml, 23.50
-Coca Cola Coke 330ml, 34.95
-Le Minerale 600ml, 11.60
+Mogu Mogu Strawberry Juice 320ml,45.00,Beverage
+Vitamilk Soya Drink Double Choco 250ml,32.50,Beverage
+Kopiko Lucky Day 180ml,23.50,Beverage
+Coca Cola Coke 330ml,34.95,Beverage
+Le Minerale 600ml,11.60,Beverage
 
-#Hair Care
-Head & Shoulders Cool Menthol 170ml, 179.75
-Sunsilk Strong and Long 320ml, 141.75
-Dove Ceramide Intense Repair Shampoo 170ml, 200.00
-Pantene Hair Fall Control 150ml, 188.00
-Palmolive Naturals Intensive Moisture 180ml, 144.00
+Head & Shoulders Cool Menthol 170ml,179.75,Hair Care
+Sunsilk Strong and Long 320ml,141.75,Hair Care
+Dove Ceramide Intense Repair Shampoo 170ml,200.00,Hair Care
+Pantene Hair Fall Control 150ml,188.00,Hair Care
+Palmolive Naturals Intensive Moisture 180ml,144.00,Hair Care
 
-#Body Care
-Safeguard Pure White Jumbo 175g, 69.75
-Dove White Beauty Bar 90g, 75.00
-Dr. S. Wong's Sulfur Soap with Aloe Vera 135g, 61.75
-Bioderm Soap Coolness 135g, 48.75
-Palmolive Pinkish Glow 115g, 41.74
+Safeguard Pure White Jumbo 175g,69.75,Body Care
+Dove White Beauty Bar 90g,75.00,Body Care
+Dr. S. Wong's Sulfur Soap with Aloe Vera 135g,61.75,Body Care
+Bioderm Soap Coolness 135g,48.75,Body Care
+Palmolive Pinkish Glow 115g,41.74,Body Care
 
-#School & Office Supplies
-Mongol Pencil No.2 1 pc, 9.92
-Panda Ballpen 0.7mm Blue 1 pc, 12.00
-Corona Spiral Notebook 80 Leaves 1 pc, 45.00
-Victory Yellow Pad 90 leaves 1 pc, 91.00
-Elmer's Washable School Glue Gel 36g, 22.00
+Mongol Pencil No.2 1 pc,9.93,School & Office Supplies
+Panda Ballpen 0.7mm Blue 1 pc,12.00,School & Office Supplies
+Corona Spiral Notebook 80 Leaves 1 pc,45.00,School & Office Supplies
+Victory Yellow Pad 90 leaves 1 pc,91.00,School & Office Supplies
+Elmer's Washable School Glue Gel 36g,22.00,School & Office Supplies
 
-#Apparel
-  Regatta Nautical-Inspired T-Shirt, 900.00
-  Jag Jeans Classic Denim Pants, 1000.00
-  Memo Casual Shorts, 500.00
-  Artwork Graphic Socks, 150.00
-  Regatta Hooded Sweatshirt, 1100.00
+Regatta Nautical-Inspired T-Shirt,900.00,Apparel
+Jag Jeans Classic Denim Pants,1000.00,Apparel
+Memo Casual Shorts,500.00,Apparel
+Artwork Graphic Socks,150.00,Apparel
+Regatta Hooded Sweatshirt,1100.00,Apparel
 
-#Kitchenware
-  KitchenCraft BarCraft 3-Piece Cocktail Set, 2450.00
-  KitchenCraft World Of Flavors Oriental Iron Sizzle Platter, 1850.00
-  KitchenCraft La Cafetiere 3 Cup Thermique - Copper Cafetiere, 3450.00
-  KitchenCraft BarCraft Deluxe Electric Corkscrew - Black, 2450.00
-  KitchenCraft BarCraft Stainless Steel Ice Bucket, 3450.00
+KitchenCraft BarCraft 3-Piece Cocktail Set,2450.00,Kitchenware
+KitchenCraft World Of Flavors Oriental Iron Sizzle Platter,1850.00,Kitchenware
+KitchenCraft La Cafetiere 3 Cup Thermique - Copper Cafetiere,3450.00,Kitchenware
+KitchenCraft BarCraft Deluxe Electric Corkscrew - Black,2450.00,Kitchenware
+KitchenCraft BarCraft Stainless Steel Ice Bucket,3450.00,Kitchenware
 
-#Peripherals
-  Logitech Wireless Mouse, 1500.00
-  Acer 24-inch LED Monitor, 6000.00
-  Razer BlackWidow Mechanical Keyboard, 2500.00
-  Sony WH-CH510 Wireless Headphones, 2000.00
-  Anko 10000mAh Power Bank, 1300.00
+Logitech Wireless Mouse,1500.00,Peripherals
+Acer 24-inch LED Monitor,6000.00,Peripherals
+Razer BlackWidow Mechanical Keyboard,2500.00,Peripherals
+Sony WH-CH510 Wireless Headphones,2000.00,Peripherals
+Anko 10000mAh Power Bank,1300.00,Peripherals
 
-#Tools
-  Stanley Fiberglass Hammer, 70.00
-  Bosch 2-inch Nails - 100 pcs, 50.00
-  Stanley Multi-bit Screwdriver, 65.00
-  Energizer LED Flashlight, 120.00
-  3M Scotch Electrical Tape, 45.00
+Stanley Fiberglass Hammer,70.00,Tools
+Bosch 2-inch Nails - 100 pcs,50.00,Tools
+Stanley Multi-bit Screwdriver,65.00,Tools
+Energizer LED Flashlight,120.00,Tools
+3M Scotch Electrical Tape,45.00,Tools
 
-#Toys
-  Anko Plush Teddy Bear, 420.00
-  Hot Wheels Die-Cast Toy Car, 149.00
-  Nerf N-Strike Elite Disruptor Blaster, 249.00
-  Ravensburger Jigsaw Puzzle - 500 pcs, 289.00
-  Barbie Fashionista Doll, 790.00
+Anko Plush Teddy Bear,420.00,Toys
+Hot Wheels Die-Cast Toy Car,149.00,Toys
+Nerf N-Strike Elite Disruptor Blaster,249.00,Toys
+Ravensburger Jigsaw Puzzle - 500 pcs,289.00,Toys
+Barbie Fashionista Doll,790.00,Toys

@@ -1,9 +1,9 @@
 import random
+import pandas as pd
 from datetime import datetime
  
 inventory_dict = {}
 purchased_items = []
-
 def date_time():
     #Returns current date time
     now = datetime.now()
@@ -99,20 +99,7 @@ def get_menu_input() -> str:
                return key
                 
 def process_items():
-    #Process the items from a csv file and parse it into a nested dict where the outer dict is the category,
-    #and inside is a dict of items
-    try:
-        with open ("products.csv") as file:
-            for line in file:
-                if line.strip():
-                    parts = [part.strip() for part in line.split(",")]
-                    if parts[0][0] == "#":
-                        category = parts[0].replace("#", "")
-                        inventory_dict[category] = {}
-                        continue
-                    inventory_dict[category][parts[0]] = float(parts[1])
-    except Exception as e:
-        print(e)
+    inventory = pd.read_csv('products.csv', header=0)
 
 def apply_discount(total_cost, discount_rate=0.15):
     #Return a discounted version of the cost
