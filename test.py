@@ -100,6 +100,7 @@ def get_menu_input() -> str:
                 
 def process_items():
     inventory = pd.read_csv('products.csv', header=0)
+    return inventory
 
 def apply_discount(total_cost, discount_rate=0.15):
     #Return a discounted version of the cost
@@ -138,8 +139,8 @@ def print_cart():
 def main():
     is_running = True
     transaction_id_instance = transaction_id()
-    process_items()
-    print(inventory_dict)
+    inventory = process_items()
+    print(inventory)
     while is_running:
         while True:
             welcome_page(transaction_id_instance)
