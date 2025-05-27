@@ -47,6 +47,7 @@ def purchase_type():
 def get_item_input(category):
     # Gets item input from user based on the arguments given
     # and returns the item name, quantity of item and its total price
+    categories = inventory["Category"].unique()
     separator()
     while True:  # input validation
        item = input("Select the item you want: ").strip()
@@ -88,15 +89,16 @@ def print_menu():
 
 def get_menu_input() -> str:
     # Get the input of the user or press q to quit
+    categories = inventory["Category"].unique()
     while True:  
        user_input = input(f"Select a category by inputting the number ('q' to checkout): ").strip()
        if user_input.lower() == 'q':
            return user_input
-       if not user_input.isdigit() or int(user_input) < 1 or int(user_input) > len(inventory_dict):
+       if not user_input.isdigit() or int(user_input) < 1 or int(user_input) > len(categories):
            print("Invalid input. Please enter a valid category number or 'q' to checkout.")
            continue
         
-       for i, key in enumerate(inventory_dict):
+       for i, key in enumerate(categories):
            if int(user_input) == i + 1:
                return key
                 
