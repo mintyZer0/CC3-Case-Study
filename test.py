@@ -47,7 +47,8 @@ def purchase_type():
 def get_item_input(category):
     # Gets item input from user based on the arguments given
     # and returns the item name, quantity of item and its total price
-    categories = inventory["Category"].unique()
+    items = inventory[inventory["Category"] == category]
+    items = tuple(items[['Product Name', 'Price']].itertuples(index=False,name=None))
     separator()
     while True:  # input validation
        item = input("Select the item you want: ").strip()
@@ -56,7 +57,7 @@ def get_item_input(category):
            continue
        item = int(item)
         
-       if item < 1 or item > len(inventory_dict[category]):
+       if item < 1 or item > len(items):
            print("Invalid item selection. Please choose a valid item.")
            continue
         
@@ -66,9 +67,9 @@ def get_item_input(category):
            continue
         
        quantity = int(quantity)
-       for i, (key, value) in enumerate(inventory_dict[category].items()):
+       for i, value in enumerate(items):
            if item == i + 1:
-               return key, quantity, quantity * value, value
+               return value[0], quantity, quantity * value[1], value[1]
 
 def print_items(category):
     #Prints items listed inside category
