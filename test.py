@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
  
 inventory_dict = {}
+inventory: pd.DataFrame = pd.DataFrame()
 purchased_items = []
 def date_time():
     #Returns current date time
@@ -81,8 +82,9 @@ def print_menu():
     separator()
     print(f"{"Menu":^100}")
     separator()
-    for i, (key, value) in enumerate(inventory_dict.items()):
-        print(f"({i+1}) {key}")
+    categories = inventory['Category'].unique()
+    for i, items in enumerate(categories):
+        print(f"({i+1}) {items}")
 
 def get_menu_input() -> str:
     # Get the input of the user or press q to quit
@@ -99,6 +101,7 @@ def get_menu_input() -> str:
                return key
                 
 def process_items():
+    global inventory
     inventory = pd.read_csv('products.csv', header=0)
     return inventory
 
@@ -139,7 +142,7 @@ def print_cart():
 def main():
     is_running = True
     transaction_id_instance = transaction_id()
-    inventory = process_items()
+    process_items()
     print(inventory)
     while is_running:
         while True:
