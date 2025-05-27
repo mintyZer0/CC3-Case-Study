@@ -74,9 +74,12 @@ def print_items(category):
     #Prints items listed inside category
     print(f"{"Items":^50}|{"Price":^50}")
     separator()
-    for i, (key, value) in enumerate(inventory_dict[category].items()):
-        value = "₱" + str(value)
-        print(f"({i+1}) {key:<46}|{value:>50}")
+    category_items = inventory[inventory["Category"] == category]
+    category_items = tuple(category_items[['Product Name','Price']].itertuples(index=False,name=None))
+    
+    for i, items in enumerate(category_items):
+        value = "₱" + str(items[1])
+        print(f"({i+1}) {items[0]:<46}|{value:>50}")
 
 def print_menu(): 
     #Prints menu options
@@ -145,7 +148,6 @@ def main():
     is_running = True
     transaction_id_instance = transaction_id()
     process_items()
-    print(inventory)
     while is_running:
         while True:
             welcome_page(transaction_id_instance)
