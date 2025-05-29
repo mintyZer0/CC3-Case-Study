@@ -2,9 +2,11 @@ import random
 import pandas as pd
 from datetime import datetime
  
-inventory: pd.DataFrame = pd.DataFrame()
-purchased_items = []
 class Warehouse:
+    def __init__(self):
+        self.inventory: pd.DataFrame = pd.DataFrame()
+        self.purchased_items = []
+
     def date_time(self):
         #Returns current date time
         now = datetime.now()
@@ -47,7 +49,7 @@ class Warehouse:
     def get_item_input(self, category):
         # Gets item input from user based on the arguments given
         # and returns the item name, quantity of item and its total price
-        items = inventory[inventory["Category"] == category]
+        items = self.inventory[self.inventory["Category"] == category]
         items = tuple(items[['Product Name', 'Price']].itertuples(index=False,name=None))
         self.separator()
         while True:  # input validation
@@ -75,7 +77,7 @@ class Warehouse:
         #Prints items listed inside category
         print(f"{"Items":^50}|{"Price":^50}")
         self.separator()
-        category_items = inventory[inventory["Category"] == category]
+        category_items = self.inventory[self.inventory["Category"] == category]
         category_items = tuple(category_items[['Product Name','Price']].itertuples(index=False,name=None))
         
         for i, items in enumerate(category_items):
@@ -87,13 +89,13 @@ class Warehouse:
         self.separator()
         print(f"{"Menu":^100}")
         self.separator()
-        categories = inventory['Category'].unique()
+        categories = self.inventory['Category'].unique()
         for i, items in enumerate(categories):
             print(f"({i+1}) {items}")
 
     def get_menu_input(self) -> str:
         # Get the input of the user or press q to quit
-        categories = inventory["Category"].unique()
+        categories = self.inventory["Category"].unique()
         while True:  
            user_input = input(f"Select a category by inputting the number ('q' to checkout): ").strip()
            if user_input.lower() == 'q':
@@ -107,9 +109,8 @@ class Warehouse:
                    return key
                     
     def process_items(self):
-        global inventory
-        inventory = pd.read_csv('../products.csv', header=0)
-        return inventory
+        self.inventory = pd.read_csv('../products.csv', header=0)
+        return self.inventory
 
     def apply_discount(self, total_cost, discount_rate=0.15):
         #Return a discounted version of the cost
@@ -121,7 +122,7 @@ class Warehouse:
         print(f"{"Receipt":^100}")
         self.separator()
         total_amount = 0
-        for item in purchased_items:
+        for item in self.purchased_items:
             item_name, quantity, cost, *_ = item 
             total_amount += cost
             cost = '₱' + str(f"{cost:.2f}")
@@ -138,7 +139,7 @@ class Warehouse:
         self.separator()
         print(f"{'Qty':^25}|{'Item':^25}|{'Unit Price':^25}|{'Total Cost':^25}")
         self.separator()
-        for item in purchased_items:
+        for item in self.purchased_items:
             item_name = f"{item[0][0:max_length-4]}..." if len(item[0]) > max_length else item[0] 
             price_per_unit = "₱" + str(f"{item[3]:.2f}") 
             total_cost = "₱" + str(f"{item[2]:.2f}")
@@ -152,7 +153,7 @@ class Warehouse:
         while is_running:
             while True:
                 self.welcome_page(transaction_id_instance)
-                if purchased_items:
+                if self.purchased_items:
                     self.print_cart()
                 self.print_menu()
                 menu_input = self.get_menu_input()
@@ -175,19 +176,19 @@ class Warehouse:
                                 print("Quantity is less than 20, no discount applied.")
                                 print(f"Total cost: ₱{total_cost}")
                                 discounted = False
-                                purchased_items.append((item, quantity, total_cost, price_per_unit, discounted))
+                                self.purchased_items.append((item, quantity, total_cost, price_per_unit, discounted))
                             else:
                                 discounted_price = self.apply_discount(total_cost)
                                 print(f"Total cost: ₱{total_cost:.2f}")
                                 print(f"Discounted price: ₱{discounted_price:.2f}")
                                 discounted = True
-                                purchased_items.append((item, quantity, discounted_price, price_per_unit, discounted))
+                                self.purchased_items.append((item, quantity, discounted_price, price_per_unit, discounted))
                         elif choice.lower() == 'retail':
                             self.print_items(menu_input)
                             item, quantity, total_cost, price_per_unit = self.get_item_input(category)
                             print(f"Total cost: ₱{total_cost}")
                             discounted = False
-                            purchased_items.append((item, quantity, total_cost, price_per_unit, discounted))
+                            self.purchased_items.append((item, quantity, total_cost, price_per_unit, discounted))
                         else:
                             raise ValueError("Invalid purchase type")
                     except ValueError as ve:
